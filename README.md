@@ -48,4 +48,33 @@ Here is a visual overview of the data architecture, Airflow pipeline execution, 
 * **DBT Test:**
   ![DBT Test](Docs/DBT-Test.png)
 
+## 📊 Airflow DAG Graph
+
 The pipeline execution flow:
+
+[validate_products] ➔ [load_products] ┐
+│
+[validate_orders]   ➔ [load_orders]   ├──► [Transformations_with_DBT] ➔ [Run_dbt_tests]
+│
+[validate_customers]➔ [load_customers]┘
+
+---
+
+## 🚀 Getting Started Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/mohamedAwad413/ecommerce-analytics-pipeline.git](https://github.com/mohamedAwad413/ecommerce-analytics-pipeline.git)
+   cd ecommerce-analytics-pipeline
+
+Initialize Astro / Airflow:
+Ensure you have Docker and Astro CLI installed, then start the local environment:
+
+Bash
+astro dev start
+Run dbt transformations manually (optional):
+
+Bash
+cd include/dbt/ecommerace_dbt
+dbt run --profiles-dir .
+dbt test --profiles-dir .
