@@ -29,6 +29,23 @@ The pipeline follows modern data stack practices and is fully orchestrated via *
 
 ---
 
-## 📊 Airflow DAG Graph
+## 📊 Airflow DAG & Pipeline Visuals
+Here is a visual overview of the data architecture, Airflow pipeline execution, and dbt models:
+
+### 1. Data Architecture
+![Data Architecture](Docs/Data%20Architecture.png)
+
+### 2. Airflow DAG Graph
+![Airflow DAG Graph](Docs/Ecommerace_DAG-graph.png)
+
+### 3. dbt Models & Lineage (DBT Graph)
+![DBT Graph](Docs/DBT-Graph.png)
+
+### 4. dbt Run & Test Results
+* **DBT Run:**
+  ![DBT Run](Docs/DBT-Run.png)
+
+* **DBT Test:**
+  ![DBT Test](Docs/DBT-Test.png)
 
 The pipeline execution flow:
