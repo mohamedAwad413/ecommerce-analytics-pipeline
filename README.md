@@ -48,16 +48,6 @@ Here is a visual overview of the data architecture, Airflow pipeline execution, 
 * **DBT Test:**
   ![DBT Test](Docs/DBT-Test.png)
 
-## 📊 Airflow DAG Graph
-
-The pipeline execution flow:
-
-[validate_products] ➔ [load_products] ┐
-│
-[validate_orders]   ➔ [load_orders]   ├──► [Transformations_with_DBT] ➔ [Run_dbt_tests]
-│
-[validate_customers]➔ [load_customers]┘
-
 ---
 
 ## 🚀 Getting Started Locally
