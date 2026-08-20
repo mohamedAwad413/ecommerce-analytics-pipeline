@@ -1,0 +1,54 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: "Raw e-commerce data tables"
+    schema: bronze
+    tables:
+      - name: customers
+        description: "Raw customers table"
+      - name: orders
+        description: "Raw orders table"
+      - name: products
+        description: "Raw products table"
+
+models:
+  # --- Silver Layer (Cleaned Data) ---
+  - name: customers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  - name: orders
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+  - name: products
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  # --- Gold Layer (Analytics) ---
+  - name: customer_360
+    columns:
+      - name: customer_unique_id
+        tests:
+          - unique
+          - not_null
+  - name: order_analytics
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+  - name: product_analytics
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
